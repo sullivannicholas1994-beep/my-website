@@ -18,7 +18,6 @@ body {
     width: 100%;
 }
 
-/* Ensure images never exceed their container width */
 img {
     max-width: 100%;
     height: auto;
@@ -67,14 +66,14 @@ img {
     align-items: center;
     justify-content: center;
     text-align: center;
-    padding-top: 140px; /* Adjusted to prevent cutoff */
+    padding-top: 140px;
     background: linear-gradient(rgba(14, 21, 37, 0.7), rgba(14, 21, 37, 0.7)), 
                 url('../images/hero_bg.jpeg') no-repeat center center/cover;
 }
 
 .product-hero {
     min-height: 60vh;
-    padding-top: 140px; /* Adjusted to prevent cutoff */
+    padding-top: 140px;
 }
 
 .hero-content h1 { 
@@ -117,7 +116,6 @@ a.product-card { padding: 0; }
 .p-content { padding: 25px; flex-grow: 1; }
 .p-content p { min-height: 2.8em; }
 
-/* Product Details Grid */
 .about-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -126,7 +124,6 @@ a.product-card { padding: 0; }
     padding: 40px 0;
 }
 
-/* High-specificity override for custom layouts */
 .about-grid[style*="grid-template-columns: 2fr 1fr"] {
     grid-template-columns: 2fr 1fr !important;
     align-items: start;
@@ -139,7 +136,35 @@ a.product-card { padding: 0; }
     height: auto;
 }
 
-/* --- 5. FOOTER & MISC --- */
+/* --- 5. INFO BOX & ALIGNMENT --- */
+.info-box {
+    background: rgba(55, 174, 217, 0.05);
+    border: 1px solid rgba(55, 174, 217, 0.3);
+    padding: 60px 40px;
+    border-radius: 8px;
+    margin-top: 50px;
+    text-align: center; /* Centers title and main text */
+}
+
+.info-icons { 
+    display: flex; 
+    justify-content: center; 
+    gap: 40px; 
+    flex-wrap: wrap; 
+    margin-top: 30px; 
+}
+
+.info-item { 
+    max-width: 300px; 
+    text-align: center; /* Centers emoji, h4, and p within each item */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.info-item h4 { margin: 10px 0; color: var(--text-light); }
+
+/* --- 6. BUTTONS & FOOTER --- */
 .btn-main {
     display: inline-block;
     padding: 14px 35px;
@@ -153,8 +178,7 @@ a.product-card { padding: 0; }
 
 footer { text-align: center; padding: 60px 0; border-top: 1px solid rgba(255,255,255,0.05); }
 
-/* --- 6. MOBILE OPTIMIZATION --- */
-
+/* --- 7. MOBILE OPTIMIZATION --- */
 @media (max-width: 992px) {
     .grid { grid-template-columns: 1fr 1fr; }
     .about-grid[style*="grid-template-columns: 2fr 1fr"] {
@@ -163,7 +187,6 @@ footer { text-align: center; padding: 60px 0; border-top: 1px solid rgba(255,255
 }
 
 @media (max-width: 768px) {
-    /* Fixed Navigation Bugfix - Horizontal Scroll */
     .navbar {
         flex-direction: column;
         height: auto;
@@ -179,23 +202,20 @@ footer { text-align: center; padding: 60px 0; border-top: 1px solid rgba(255,255
         padding: 10px 20px;
         gap: 20px;
         justify-content: flex-start;
-        /* Hide scrollbar for cleaner look */
         -ms-overflow-style: none;
         scrollbar-width: none;
     }
     .nav-links::-webkit-scrollbar { display: none; }
 
-    /* Title Cutoff Bugfixes */
     .hero-content h1 { 
         font-size: 2.2rem; 
         letter-spacing: 3px; 
     }
 
     .hero, .product-hero {
-        padding-top: 180px; /* Extra space for the multi-row mobile navbar */
+        padding-top: 180px;
     }
 
-    /* Grid & Image Scaling Fixes */
     .grid { grid-template-columns: 1fr; }
     
     .about-grid, 
@@ -205,7 +225,9 @@ footer { text-align: center; padding: 60px 0; border-top: 1px solid rgba(255,255
         gap: 30px;
     }
 
-    .about-image-container { order: -1; } /* Puts images above text on mobile */
+    .about-image-container { order: -1; }
     
     .container { width: 95%; }
+
+    .info-icons { flex-direction: column; align-items: center; }
 }
