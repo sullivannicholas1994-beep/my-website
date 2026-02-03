@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nova Pro | NovaGlass Solutions</title>
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        .product-hero {
+            background: linear-gradient(rgba(14, 21, 37, 0.85), rgba(14, 21, 37, 0.7)), 
+                        url('images/nova_pro.png') no-repeat center center/cover;
+        }
+
+        /* Side-by-Side Layout for Text and Widescreen Video */
+        .pro-content-grid {
+            display: grid;
+            grid-template-columns: 1.2fr 1.8fr; /* Gives the video slightly more room for its width */
+            gap: 40px;
+            align-items: start;
+            margin-bottom: 50px;
+        }
+
+        .demo-video {
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+            border: 1px solid rgba(55, 174, 217, 0.2);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+            display: block;
+        }
+
+        /* Mobile Adjustments */
+        @media (max-width: 992px) {
+            .pro-content-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Quick Nav Styles */
+        .quick-nav-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 15px; margin-top: 50px; padding-top: 30px; border-top: 1px solid rgba(255,255,255,0.1); }
+        .quick-nav-card { display: block; text-decoration: none; background: var(--form-bg); border: 1px solid rgba(255,255,255,0.1); border-radius: 6px; overflow: hidden; transition: 0.3s; }
+        .quick-nav-card:hover { transform: translateY(-3px); border-color: var(--accent-blue); }
+        .quick-nav-img { height: 80px; width: 100%; object-fit: cover; opacity: 0.8; }
+        .quick-nav-title { display: block; padding: 8px; font-size: 0.8rem; color: #fff; text-align: center; }
+    </style>
+</head>
+<body>
+
+    <nav class="navbar">
+        <a href="index.html"><img src="images/logo.png" alt="NovaGlass" class="main-logo"></a>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="products.html" class="active">Products</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </nav>
+
+    <section class="hero product-hero">
+        <div class="hero-content">
+            <h1>Nova Pro</h1>
+            <p style="font-size: 1.2rem; color: var(--accent-blue); text-transform: uppercase; letter-spacing: 3px;">Enhanced Clarity & Performance</p>
+        </div>
+    </section>
+
+    <main class="container" style="padding: 60px 20px;">
+        
+        <div class="pro-content-grid">
+            <div>
+                <h2 style="margin-bottom: 20px; color: var(--accent-blue);">High-Spec Residential & Commercial</h2>
+                <p style="margin-bottom: 20px;">
+                    Nova Pro is engineered for environments where visual clarity is paramount. With a reduced haze coefficient of 3.0% and higher light transmittance, it bridges the gap between our standard privacy films and optical-grade glass.
+                </p>
+                <p style="margin-bottom: 20px;">
+                    This film is the preferred choice for high-end kitchens, exterior-facing windows, and premium office partitions where a sharper view is required.
+                </p>
+                
+                <h3 style="margin-top: 30px; margin-bottom: 15px;">Key Applications:</h3>
+                <ul style="list-style: none; padding-left: 0; color: var(--text-muted);">
+                    <li style="margin-bottom: 10px;">✔ Luxury Kitchen Windows & Doors</li>
+                    <li style="margin-bottom: 10px;">✔ High-End Residential Living Areas</li>
+                    <li style="margin-bottom: 10px;">✔ Executive Boardrooms</li>
+                </ul>
+
+                <table class="specs-table" style="margin-top: 30px; width: 100%;">
+                    <tr><td style="font-weight: bold; color: var(--accent-blue);">Parallel Light Transmittance</td><td class="specs-val">86%</td></tr>
+                    <tr><td style="font-weight: bold; color: var(--accent-blue);">Haze (ON State)</td><td class="specs-val">3.0%</td></tr>
+                    <tr><td style="font-weight: bold; color: var(--accent-blue);">Viewing Angle</td><td class="specs-val">150°</td></tr>
+                    <tr><td style="font-weight: bold; color: var(--accent-blue);">Thickness</td><td class="specs-val">0.48mm</td></tr>
+                </table>
+            </div>
+
+            <div>
+                <video class="demo-video" autoplay loop muted playsinline poster="images/nova_pro.png">
+                    <source src="videos/novaglass_pro_office.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+                <p style="text-align: center; font-size: 0.8rem; color: #666; margin-top: 15px;">
+                    Nova Pro installed in an Executive Boardroom for switchable privacy.
+                </p>
+            </div>
+        </div>
+
+        <div style="text-align: center; margin-top: 60px; padding-top: 40px; border-top: 1px solid rgba(255,255,255,0.1);">
+            <h3 style="margin-bottom: 20px;">Upgrade your view.</h3>
+            <a href="contact.html" class="btn-main">Inquire Now</a>
+        </div>
+
+        <h4 style="margin-top: 60px; color: var(--text-muted); text-transform: uppercase; font-size: 0.8rem;">Explore Other Products</h4>
+        <div class="quick-nav-grid">
+            <a href="product-nova.html" class="quick-nav-card"><img src="images/nova_standard.png" class="quick-nav-img"><span class="quick-nav-title">Standard</span></a>
+            <a href="product-novapro.html" class="quick-nav-card" style="border-color: var(--accent-blue);"><img src="images/nova_pro.png" class="quick-nav-img"><span class="quick-nav-title">Pro</span></a>
+            <a href="product-novaultra.html" class="quick-nav-card"><img src="images/nova_ultra.png" class="quick-nav-img"><span class="quick-nav-title">Ultra</span></a>
+            <a href="product-novaspectrum.html" class="quick-nav-card"><img src="images/nova_spectrum.png" class="quick-nav-img"><span class="quick-nav-title">Spectrum</span></a>
+            <a href="custom-designs.html" class="quick-nav-card"><img src="images/smart_blinds.jpeg" class="quick-nav-img"><span class="quick-nav-title">Designs</span></a>
+            <a href="specialist-apps.html" class="quick-nav-card"><img src="images/specialist_applications.png" class="quick-nav-img"><span class="quick-nav-title">Specialist</span></a>
+        </div>
+
+    </main>
+
+    <footer>
+        <p>&copy; 2026 NOVAGLASS SOLUTIONS</p>
+    </footer>
+
+</body>
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us | NovaGlass Solutions</title>
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        .contact-form { max-width: 600px; margin: 0 auto; background: var(--form-bg); padding: 40px; border-radius: 8px; }
+        .form-group { margin-bottom: 20px; text-align: left; }
+        .form-group label { display: block; margin-bottom: 5px; color: var(--accent-blue); font-weight: bold; font-size: 0.9rem; }
+        input, textarea { width: 100%; padding: 12px; background: #0e1525; border: 1px solid #333; color: white; border-radius: 4px; }
+        input:focus, textarea:focus { border-color: var(--accent-blue); outline: none; }
+    </style>
+</head>
+<body>
+
+    <nav class="navbar">
+        <a href="index.html"><img src="images/logo.png" alt="NovaGlass" class="main-logo"></a>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="products.html">Products</a></li>
+            <li><a href="contact.html" class="active">Contact</a></li>
+        </ul>
+    </nav>
+
+    <main class="container" style="padding-top: 150px; text-align: center;">
+        <h1 class="section-title">REQUEST A CONSULTATION</h1>
+        <p style="color: var(--text-muted); margin-bottom: 40px;">Tell us about your project and our engineers will provide a custom solution.</p>
+
+        <form action="https://formspree.io/f/mnjvpnvg" method="POST" class="contact-form">
+            <div class="form-group">
+                <label>Name</label>
+                <input type="text" name="name" placeholder="Enter your name or company" required>
+            </div>
+            <div class="form-group">
+                <label>Email Address</label>
+                <input type="email" name="email" placeholder="Enter your email" required>
+            </div>
+            <div class="form-group">
+                <label>Project Details (Dimensions, Application)</label>
+                <textarea name="message" rows="5" placeholder="e.g. 3 Windows (120cm x 150cm) for home office" required></textarea>
+            </div>
+            <button type="submit" class="btn-main" style="width: 100%; border: none; cursor: pointer;">Send Inquiry</button>
+        </form>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 NOVAGLASS SOLUTIONS | MAKING PRIVACY CLEAR</p>
+    </footer>
+
+</body>
+</html>

@@ -1,0 +1,349 @@
+/* --- 1. GLOBAL SETTINGS & VARIABLES --- */
+:root {
+    --bg-dark: #0e1525;
+    --accent-blue: #37aed9;
+    --form-bg: #1a243a;
+    --text-light: #ffffff;
+    --text-muted: #888;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    background-color: var(--bg-dark);
+    color: var(--text-light);
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+.container {
+    width: 85%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* --- 2. NAVIGATION BAR --- */
+.navbar {
+    width: 100%;
+    height: 120px;
+    background: rgba(14, 21, 37, 0.98);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 8%;
+    position: fixed;
+    top: 0;
+    z-index: 2000;
+    border-bottom: 1px solid rgba(55, 174, 217, 0.2);
+}
+
+.main-logo { max-height: 100px; width: auto; }
+
+.nav-links { display: flex; list-style: none; gap: 30px; }
+.nav-links a { 
+    text-decoration: none; 
+    color: white; 
+    font-weight: bold; 
+    text-transform: uppercase; 
+    font-size: 0.9rem; 
+    transition: 0.3s; 
+}
+.nav-links a:hover, .nav-links a.active { color: var(--accent-blue); }
+
+/* --- 3. HERO SECTIONS --- */
+.hero {
+    height: 85vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding-top: 120px;
+    /* Default Hero Background - overridden on specific pages */
+    background: linear-gradient(rgba(14, 21, 37, 0.7), rgba(14, 21, 37, 0.7)), 
+                url('../images/hero_bg.jpeg') no-repeat center center/cover;
+}
+
+.product-hero {
+    /* Base class for product pages - specific images set inline in HTML */
+    height: 60vh; /* Slightly shorter for product pages */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding-top: 100px;
+    background-size: cover;
+    background-position: center;
+}
+
+.hero-content h1 { font-size: 4rem; letter-spacing: 10px; margin-bottom: 20px; }
+
+/* Global Header Spacing for all sub-pages */
+header {
+    padding-top: 180px !important; 
+    padding-bottom: 50px;
+}
+
+/* --- 4. MAIN GRID SYSTEMS (Home & Products Page) --- */
+
+/* HOME PAGE GRID */
+.grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); 
+    gap: 30px;
+    margin: 40px 0;
+}
+
+/* PRODUCTS PAGE GRID */
+.products-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); 
+    gap: 30px;
+    margin-bottom: 60px;
+}
+
+/* UNIVERSAL CARD STYLING */
+.card, a.product-card {
+    background-color: var(--form-bg);
+    border: 1px solid rgba(55, 174, 217, 0.3);
+    border-radius: 8px;
+    padding: 30px;
+    text-decoration: none;
+    color: inherit;
+    transition: all 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+a.product-card { padding: 0; }
+
+.card:hover, a.product-card:hover {
+    transform: translateY(-10px);
+    border-color: var(--accent-blue);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5);
+}
+
+/* Product Card Images & Content */
+.img-placeholder {
+    width: 100%;
+    height: 220px;
+    background-color: #090e1a;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #444;
+    font-weight: bold;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.product-img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    display: block;
+    border-top-left-radius: 7px;
+    border-top-right-radius: 7px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.p-content { padding: 25px; flex-grow: 1; display: flex; flex-direction: column; }
+.p-title { font-size: 1.2rem; margin-bottom: 5px; color: var(--text-light); }
+.p-tagline { color: var(--accent-blue); font-size: 0.8rem; text-transform: uppercase; margin-bottom: 10px; }
+
+/* Alignment fix for product descriptions */
+.p-content p { min-height: 2.8em; }
+
+.specs-table { width: 100%; margin: 15px 0; border-collapse: collapse; font-size: 0.9rem; }
+.specs-table td { padding: 8px 0; border-bottom: 1px solid rgba(255,255,255,0.05); }
+.specs-val { text-align: right; color: var(--text-light); }
+
+
+/* --- 5. PRODUCT DETAIL PAGE LAYOUTS --- */
+
+/* Standard Info Grid (Used on all product pages) */
+.about-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: center;
+    padding: 40px 0;
+}
+/* Override for specific text-heavy layouts */
+.about-grid[style*="grid-template-columns: 2fr 1fr"] {
+    grid-template-columns: 2fr 1fr !important;
+    align-items: start;
+}
+
+.about-img { width: 100%; border-radius: 10px; border: 1px solid rgba(55, 174, 217, 0.2); }
+
+/* Video Container (Nova Standard Page) */
+.video-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 25px;
+    margin: 50px auto 30px auto;
+    max-width: 75%; /* Shrinks videos slightly as requested */
+}
+
+/* Widescreen Layout (Nova Pro Page) */
+.pro-content-grid {
+    display: grid;
+    grid-template-columns: 1.2fr 1.8fr;
+    gap: 40px;
+    align-items: start;
+    margin-bottom: 50px;
+}
+
+/* Feature Grid (Custom Designs Page) */
+.design-feature-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    align-items: center;
+    margin-bottom: 60px;
+}
+
+/* General Video Styling */
+.demo-video, .feature-video {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    border: 1px solid rgba(55, 174, 217, 0.2);
+    box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+    display: block;
+}
+.video-caption { text-align: center; font-size: 0.85rem; color: #888; margin-top: 10px; }
+
+
+/* --- 6. GALLERY SYSTEM (Specialist & Custom Design Pages) --- */
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 25px;
+    margin-top: 40px;
+}
+
+.gallery-card {
+    background: var(--form-bg);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    border-radius: 8px;
+    overflow: hidden;
+    transition: 0.3s;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+.gallery-card:hover { transform: translateY(-5px); border-color: var(--accent-blue); }
+
+.gallery-img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    border-bottom: 1px solid rgba(255,255,255,0.05);
+    display: block;
+}
+
+.gallery-caption {
+    padding: 15px;
+    text-align: center;
+    font-size: 0.9rem;
+    color: #ccc;
+    flex-grow: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.gallery-placeholder {
+    height: 250px;
+    background: rgba(255, 255, 255, 0.03);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #555;
+    font-style: italic;
+    border-bottom: 1px solid rgba(255,255,255,0.05);
+}
+
+
+/* --- 7. QUICK NAVIGATION (Footer of Product Pages) --- */
+.quick-nav-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    gap: 15px;
+    margin-top: 50px;
+    padding-top: 30px;
+    border-top: 1px solid rgba(255,255,255,0.1);
+}
+
+.quick-nav-card {
+    display: block;
+    text-decoration: none;
+    background: var(--form-bg);
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 6px;
+    overflow: hidden;
+    transition: 0.3s;
+}
+.quick-nav-card:hover { transform: translateY(-3px); border-color: var(--accent-blue); }
+
+.quick-nav-img { height: 80px; width: 100%; object-fit: cover; opacity: 0.8; }
+.quick-nav-title { display: block; padding: 8px; font-size: 0.8rem; color: #fff; text-align: center; }
+
+
+/* --- 8. INFO BOX & FORMS --- */
+.info-box {
+    background: rgba(55, 174, 217, 0.05);
+    border: 1px solid rgba(55, 174, 217, 0.3);
+    padding: 60px 40px;
+    border-radius: 8px;
+    margin-top: 50px;
+    text-align: center;
+}
+
+.info-icons { display: flex; justify-content: center; gap: 40px; flex-wrap: wrap; margin-top: 30px; }
+.info-item { max-width: 250px; }
+
+.contact-form { 
+    max-width: 600px; 
+    margin: 40px auto; 
+    background: var(--form-bg); 
+    padding: 40px; 
+    border-radius: 8px; 
+    border: 1px solid rgba(55, 174, 217, 0.2);
+}
+
+/* --- 9. BUTTONS & FOOTER --- */
+.btn-main {
+    display: inline-block;
+    padding: 14px 35px;
+    background-color: var(--accent-blue);
+    color: var(--bg-dark);
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 4px;
+    transition: 0.3s;
+    border: none;
+}
+.btn-main:hover { background-color: #ffffff; transform: scale(1.05); }
+
+footer { text-align: center; padding: 60px 0; border-top: 1px solid rgba(255,255,255,0.05); margin-top: 50px; }
+
+
+/* --- 10. RESPONSIVE ADJUSTMENTS --- */
+@media (max-width: 992px) {
+    .grid { grid-template-columns: repeat(2, 1fr); }
+    .pro-content-grid { grid-template-columns: 1fr; }
+    .design-feature-grid { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 768px) {
+    .about-grid { grid-template-columns: 1fr !important; text-align: center; }
+    .video-container { grid-template-columns: 1fr; max-width: 90%; }
+}
+
+@media (max-width: 600px) {
+    .grid { grid-template-columns: 1fr; }
+}

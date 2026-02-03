@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nova Spectrum | NovaGlass Solutions</title>
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        .product-hero {
+            background: linear-gradient(rgba(14, 21, 37, 0.85), rgba(14, 21, 37, 0.7)), 
+                        url('images/nova_spectrum.png') no-repeat center center/cover;
+        }
+        .quick-nav-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 15px; margin-top: 50px; padding-top: 30px; border-top: 1px solid rgba(255,255,255,0.1); }
+        .quick-nav-card { display: block; text-decoration: none; background: var(--form-bg); border: 1px solid rgba(255,255,255,0.1); border-radius: 6px; overflow: hidden; transition: 0.3s; }
+        .quick-nav-card:hover { transform: translateY(-3px); border-color: var(--accent-blue); }
+        .quick-nav-img { height: 80px; width: 100%; object-fit: cover; opacity: 0.8; }
+        .quick-nav-title { display: block; padding: 8px; font-size: 0.8rem; color: #fff; text-align: center; }
+    </style>
+</head>
+<body>
+
+    <nav class="navbar">
+        <a href="index.html"><img src="images/logo.png" alt="NovaGlass" class="main-logo"></a>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="products.html" class="active">Products</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </nav>
+
+    <section class="hero product-hero">
+        <div class="hero-content">
+            <h1>Nova Spectrum</h1>
+            <p style="font-size: 1.2rem; color: var(--accent-blue); text-transform: uppercase; letter-spacing: 3px;">Privacy in Colour</p>
+        </div>
+    </section>
+
+    <main class="container" style="padding: 60px 20px;">
+        
+        <div class="about-grid" style="grid-template-columns: 2fr 1fr; gap: 40px; align-items: start;">
+            <div>
+                <h2 style="margin-bottom: 20px; color: var(--accent-blue);">Architectural Tint & Design</h2>
+                <p style="margin-bottom: 20px;">
+                    Who said privacy has to be white? Nova Spectrum introduces vibrant color options to PDLC technology. Available in a variety of tints including Grey, Blue, Pink, and Yellow, this film allows architects and designers to match smart glass to the interior design palette.
+                </p>
+                <p style="margin-bottom: 20px;">
+                    Spectrum films maintain the same privacy control as our standard lines but add a layer of mood lighting and aesthetic integration.
+                </p>
+                
+                <h3 style="margin-top: 30px; margin-bottom: 15px;">Available Colors:</h3>
+                <ul style="list-style: none; padding-left: 0; color: var(--text-muted); display: flex; gap: 15px;">
+                    <li>⚫ Dark Grey</li>
+                    <li>🔵 Blue</li>
+                    <li>🔴 Pink</li>
+                    <li>🟡 Yellow</li>
+                </ul>
+
+                <h3 style="margin-top: 30px; margin-bottom: 15px;">Key Applications:</h3>
+                <ul style="list-style: none; padding-left: 0; color: var(--text-muted);">
+                    <li style="margin-bottom: 10px;">✔ Modern Office Design</li>
+                    <li style="margin-bottom: 10px;">✔ Creative Studios</li>
+                    <li style="margin-bottom: 10px;">✔ Feature Walls & Art Installations</li>
+                </ul>
+            </div>
+
+            <div>
+                <video autoplay loop muted playsinline poster="images/nova_spectrum.png" style="width: 100%; border-radius: 8px; border: 1px solid rgba(55, 174, 217, 0.2); box-shadow: 0 4px 15px rgba(0,0,0,0.3);">
+                    <source src="videos/novaglass_spectrum.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+                <p style="text-align: center; font-size: 0.8rem; color: #666; margin-top: 10px;">
+                    Multi-colored panels in a demonstration display.
+                </p>
+            </div>
+        </div>
+
+        <div style="text-align: center; margin-top: 60px; padding-top: 40px; border-top: 1px solid rgba(255,255,255,0.1);">
+            <h3 style="margin-bottom: 20px;">Add colour to your project.</h3>
+            <a href="contact.html" class="btn-main">Inquire Now</a>
+        </div>
+
+        <h4 style="margin-top: 60px; color: var(--text-muted); text-transform: uppercase; font-size: 0.8rem;">Explore Other Products</h4>
+        <div class="quick-nav-grid">
+            <a href="product-nova.html" class="quick-nav-card"><img src="images/nova_standard.png" class="quick-nav-img"><span class="quick-nav-title">Standard</span></a>
+            <a href="product-novapro.html" class="quick-nav-card"><img src="images/nova_pro.png" class="quick-nav-img"><span class="quick-nav-title">Pro</span></a>
+            <a href="product-novaultra.html" class="quick-nav-card"><img src="images/nova_ultra.png" class="quick-nav-img"><span class="quick-nav-title">Ultra</span></a>
+            <a href="product-novaspectrum.html" class="quick-nav-card" style="border-color: var(--accent-blue);"><img src="images/nova_spectrum.png" class="quick-nav-img"><span class="quick-nav-title">Spectrum</span></a>
+            <a href="custom-designs.html" class="quick-nav-card"><img src="images/smart_blinds.jpeg" class="quick-nav-img"><span class="quick-nav-title">Designs</span></a>
+            <a href="specialist-apps.html" class="quick-nav-card"><img src="images/specialist_applications.png" class="quick-nav-img"><span class="quick-nav-title">Specialist</span></a>
+        </div>
+
+    </main>
+
+    <footer>
+        <p>&copy; 2026 NOVAGLASS SOLUTIONS</p>
+    </footer>
+
+</body>
+</html>

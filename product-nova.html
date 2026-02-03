@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nova Standard | NovaGlass Solutions</title>
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        .product-hero {
+            background: linear-gradient(rgba(14, 21, 37, 0.85), rgba(14, 21, 37, 0.7)), 
+                        url('images/nova_standard.png') no-repeat center center/cover;
+        }
+        
+        /* Video Layout Styles - Shrinking by ~25% */
+        .video-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 25px;
+            margin: 50px auto 30px auto;
+            max-width: 75%; /* Shrinks the overall container width to ~75% */
+        }
+
+        .demo-video {
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+            border: 1px solid rgba(55, 174, 217, 0.2);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+            display: block;
+        }
+
+        .video-caption {
+            text-align: center;
+            font-size: 0.85rem;
+            color: #888;
+            margin-top: 10px;
+        }
+
+        /* Stack videos and allow more width on mobile */
+        @media (max-width: 768px) {
+            .video-container {
+                grid-template-columns: 1fr;
+                max-width: 90%;
+            }
+        }
+
+        /* Quick Nav Styles */
+        .quick-nav-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 15px; margin-top: 50px; padding-top: 30px; border-top: 1px solid rgba(255,255,255,0.1); }
+        .quick-nav-card { display: block; text-decoration: none; background: var(--form-bg); border: 1px solid rgba(255,255,255,0.1); border-radius: 6px; overflow: hidden; transition: 0.3s; }
+        .quick-nav-card:hover { transform: translateY(-3px); border-color: var(--accent-blue); }
+        .quick-nav-img { height: 80px; width: 100%; object-fit: cover; opacity: 0.8; }
+        .quick-nav-title { display: block; padding: 8px; font-size: 0.8rem; color: #fff; text-align: center; }
+    </style>
+</head>
+<body>
+
+    <nav class="navbar">
+        <a href="index.html"><img src="images/logo.png" alt="NovaGlass" class="main-logo"></a>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="products.html" class="active">Products</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </nav>
+
+    <section class="hero product-hero">
+        <div class="hero-content">
+            <h1>Nova Standard</h1>
+            <p style="font-size: 1.2rem; color: var(--accent-blue); text-transform: uppercase; letter-spacing: 3px;">The Essential Privacy Solution</p>
+        </div>
+    </section>
+
+    <main class="container" style="padding: 60px 20px;">
+        
+        <div>
+            <h2 style="margin-bottom: 20px; color: var(--accent-blue);">Reliable Everyday Privacy</h2>
+            <p style="margin-bottom: 20px; max-width: 900px;">
+                Nova Standard is our core PDLC film offering, designed to provide reliable instant privacy for residential bathrooms, office partitions, and meeting rooms. It offers a perfect balance of performance and affordability.
+            </p>
+            <p style="margin-bottom: 20px; max-width: 900px;">
+                When switched off, the film becomes an opaque, frosted barrier (Haze 3.2%) that completely blocks visibility while still allowing light to pass through. When switched on, it becomes transparent, opening up the space.
+            </p>
+            
+            <div style="display: flex; flex-wrap: wrap; gap: 50px; margin-top: 30px;">
+                <div>
+                    <h3 style="margin-bottom: 15px;">Key Applications:</h3>
+                    <ul style="list-style: none; padding-left: 0; color: var(--text-muted);">
+                        <li style="margin-bottom: 10px;">✔ Residential Bathrooms & Shower Enclosures</li>
+                        <li style="margin-bottom: 10px;">✔ Standard Office Meeting Rooms</li>
+                        <li style="margin-bottom: 10px;">✔ Interior Glazing Retrofits</li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h3 style="margin-bottom: 15px;">Technical Specs:</h3>
+                    <table class="specs-table" style="width: 100%; min-width: 300px;">
+                        <tr><td style="font-weight: bold; color: var(--accent-blue);">Parallel Light Transmittance</td><td class="specs-val">84%</td></tr>
+                        <tr><td style="font-weight: bold; color: var(--accent-blue);">Haze (ON State)</td><td class="specs-val">3.2%</td></tr>
+                        <tr><td style="font-weight: bold; color: var(--accent-blue);">Viewing Angle</td><td class="specs-val">140°</td></tr>
+                        <tr><td style="font-weight: bold; color: var(--accent-blue);">Operating Voltage</td><td class="specs-val">48V / 60V AC</td></tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+        <div class="video-container">
+            <div>
+                <video class="demo-video" autoplay loop muted playsinline poster="images/nova_standard.png">
+                    <source src="videos/novaglass_motion_sensor_residential.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+                <p class="video-caption">Residential Partition Demo</p>
+            </div>
+            
+            <div>
+                <video class="demo-video" autoplay loop muted playsinline poster="images/nova_standard.png">
+                    <source src="videos/novaglass_motion_sensor_shower.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+                <p class="video-caption">Bathroom Privacy Demo</p>
+            </div>
+        </div>
+
+        <div style="text-align: center; margin-top: 60px; padding-top: 40px; border-top: 1px solid rgba(255,255,255,0.1);">
+            <h3 style="margin-bottom: 20px;">Ready to transform your space?</h3>
+            <a href="contact.html" class="btn-main">Inquire Now</a>
+        </div>
+
+        <h4 style="margin-top: 60px; color: var(--text-muted); text-transform: uppercase; font-size: 0.8rem;">Explore Other Products</h4>
+        <div class="quick-nav-grid">
+            <a href="product-nova.html" class="quick-nav-card" style="border-color: var(--accent-blue);"><img src="images/nova_standard.png" class="quick-nav-img"><span class="quick-nav-title">Standard</span></a>
+            <a href="product-novapro.html" class="quick-nav-card"><img src="images/nova_pro.png" class="quick-nav-img"><span class="quick-nav-title">Pro</span></a>
+            <a href="product-novaultra.html" class="quick-nav-card"><img src="images/nova_ultra.png" class="quick-nav-img"><span class="quick-nav-title">Ultra</span></a>
+            <a href="product-novaspectrum.html" class="quick-nav-card"><img src="images/nova_spectrum.png" class="quick-nav-img"><span class="quick-nav-title">Spectrum</span></a>
+            <a href="custom-designs.html" class="quick-nav-card"><img src="images/smart_blinds.jpeg" class="quick-nav-img"><span class="quick-nav-title">Designs</span></a>
+            <a href="specialist-apps.html" class="quick-nav-card"><img src="images/specialist_applications.png" class="quick-nav-img"><span class="quick-nav-title">Specialist</span></a>
+        </div>
+
+    </main>
+
+    <footer>
+        <p>&copy; 2026 NOVAGLASS SOLUTIONS</p>
+    </footer>
+
+</body>
+</html>
