@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="refresh" content="5;url=index.html">
+    <title>Message Sent | NovaGlass Solutions</title>
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        .success-container {
+            min-height: 70vh; /* Changed to min-height for better mobile scaling */
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 40px 20px; /* Added side padding for mobile */
+        }
+        .success-icon {
+            font-size: clamp(3rem, 15vw, 5rem); /* Scales smoothly based on screen width */
+            color: var(--accent-blue);
+            margin-bottom: 20px;
+        }
+        .success-container h1 {
+            font-size: clamp(1.8rem, 8vw, 2.5rem); /* Prevents title cutoff */
+            letter-spacing: 3px;
+        }
+        .countdown {
+            margin-top: 30px;
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            max-width: 300px; /* Keeps text legible on mobile */
+        }
+    </style>
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="logo-group">
+            <a href="index.html"><img src="images/logo.png" alt="NovaGlass" class="main-logo"></a>
+            <div class="logo-text">
+                <span class="company-name">NOVAGLASS SOLUTIONS</span>
+                <span class="company-tagline">MAKING PRIVACY CLEAR</span>
+            </div>
+        </div>
+    </nav>
+
+    <main class="container success-container">
+        <div class="success-icon">✓</div>
+        <h1 class="section-title">THANK YOU</h1>
+        <p style="max-width: 500px; margin: 0 auto;">
+            Your inquiry has been received. One of our engineers will be in touch shortly to discuss your requirements.
+        </p>
+        
+        <p class="countdown">Redirecting you to the home page in 5 seconds...</p>
+        <a href="index.html" class="btn-main" style="margin-top: 25px;">Return Now</a>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 NOVAGLASS SOLUTIONS | MAKING PRIVACY CLEAR</p>
+    </footer>
+
+</body>
+</html>
