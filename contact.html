@@ -11,6 +11,40 @@
         .form-group label { display: block; margin-bottom: 5px; color: var(--accent-blue); font-weight: bold; font-size: 0.9rem; }
         input, textarea { width: 100%; padding: 12px; background: #0e1525; border: 1px solid #333; color: white; border-radius: 4px; }
         input:focus, textarea:focus { border-color: var(--accent-blue); outline: none; }
+
+        /* Direct Contact Styles */
+        .direct-contact { margin-bottom: 40px; }
+        .email-list { 
+            display: flex; 
+            flex-direction: column; 
+            gap: 15px; 
+            align-items: center; 
+            margin: 20px 0;
+        }
+        .email-box {
+            display: flex;
+            align-items: center;
+            background: rgba(55, 174, 217, 0.1);
+            border: 1px solid rgba(55, 174, 217, 0.3);
+            border-radius: 4px;
+            padding: 10px 15px;
+            width: 100%;
+            max-width: 450px;
+            justify-content: space-between;
+        }
+        .email-text { font-family: monospace; color: var(--text-light); font-size: 0.95rem; }
+        .copy-btn {
+            background: var(--accent-blue);
+            color: var(--bg-dark);
+            border: none;
+            padding: 5px 10px;
+            border-radius: 3px;
+            font-size: 0.75rem;
+            font-weight: bold;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+        .copy-btn:hover { opacity: 0.8; }
     </style>
 </head>
 <body>
@@ -28,12 +62,29 @@
             <li><a href="about.html">About</a></li>
             <li><a href="products.html">Products</a></li>
             <li><a href="contact.html" class="active">Contact</a></li>
+			<li><a href="faq.html">FAQ</a></li>
         </ul>
     </nav>
 
     <main class="container" style="padding-top: 150px; text-align: center;">
         <h1 class="section-title">REQUEST A CONSULTATION</h1>
-        <p style="color: var(--text-muted); margin-bottom: 40px;">Tell us about your project and our engineers will provide a custom solution.</p>
+        
+        <div class="direct-contact">
+            <p style="color: var(--text-light); font-weight: bold;">Contact one of our representatives directly at the following:</p>
+            
+            <div class="email-list">
+                <div class="email-box">
+                    <span class="email-text">chris.swan@novaglass-solutions.com</span>
+                    <button class="copy-btn" onclick="copyEmail('chris.swan@novaglass-solutions.com', this)">COPY</button>
+                </div>
+                <div class="email-box">
+                    <span class="email-text">nick.sullivan@novaglass-solutions.com</span>
+                    <button class="copy-btn" onclick="copyEmail('nick.sullivan@novaglass-solutions.com', this)">COPY</button>
+                </div>
+            </div>
+
+            <p style="color: var(--text-muted); margin-top: 20px;">Or fill in our form below and a representative will be in touch</p>
+        </div>
 
         <script type="text/javascript">var submitted = false;</script>
         <iframe name="hidden_iframe" id="hidden_iframe" style="display:none;" 
@@ -69,6 +120,20 @@
     <footer>
         <p>&copy; 2026 NOVAGLASS SOLUTIONS | MAKING PRIVACY CLEAR</p>
     </footer>
+
+    <script>
+        function copyEmail(email, btn) {
+            navigator.clipboard.writeText(email).then(() => {
+                const originalText = btn.innerText;
+                btn.innerText = "COPIED!";
+                btn.style.background = "#4CAF50";
+                setTimeout(() => {
+                    btn.innerText = originalText;
+                    btn.style.background = "";
+                }, 2000);
+            });
+        }
+    </script>
 
 </body>
 </html>

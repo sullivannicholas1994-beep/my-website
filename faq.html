@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FAQ | NovaGlass Solutions</title>
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        /* FAQ Specific Styles */
+        .faq-section { margin-bottom: 60px; }
+        
+        .faq-split {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            align-items: center;
+            background: var(--form-bg);
+            padding: 40px;
+            border-radius: 8px;
+            border: 1px solid rgba(55, 174, 217, 0.2);
+            margin-bottom: 30px;
+        }
+        
+        .faq-split img {
+            width: 100%;
+            border-radius: 6px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        /* "Reverse" class swaps the image to the left side */
+        .faq-split.reverse { direction: rtl; } 
+        .faq-split.reverse .faq-content { direction: ltr; } 
+
+        .faq-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+            margin-bottom: 30px;
+        }
+        
+        .faq-card {
+            background: rgba(255, 255, 255, 0.03);
+            padding: 30px;
+            border-radius: 6px;
+            border-left: 3px solid var(--accent-blue);
+        }
+        
+        .question {
+            color: var(--accent-blue);
+            font-size: 1.1rem;
+            margin-bottom: 15px;
+            font-weight: bold;
+        }
+        
+        .answer { color: var(--text-light); opacity: 0.9; font-size: 0.95rem; line-height: 1.6; }
+
+        /* Mobile Adjustments */
+        @media (max-width: 768px) {
+            .faq-split, .faq-split.reverse {
+                grid-template-columns: 1fr !important; /* Forces stack on mobile regardless of inline styles */
+                direction: ltr; 
+                text-align: left;
+                padding: 25px;
+            }
+            .faq-split img { margin-top: 20px; }
+        }
+    </style>
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="logo-group">
+            <a href="index.html"><img src="images/logo.png" alt="NovaGlass" class="main-logo"></a>
+            <div class="logo-text">
+                <span class="company-name">NOVAGLASS SOLUTIONS</span>
+                <span class="company-tagline">MAKING PRIVACY CLEAR</span>
+            </div>
+        </div>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="products.html">Products</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="faq.html" class="active">FAQ</a></li>
+        </ul>
+    </nav>
+
+    <main class="container" style="padding-top: 150px;">
+        <h1 class="section-title" style="text-align: center; margin-bottom: 50px;">FREQUENTLY ASKED QUESTIONS</h1>
+
+        <section class="faq-split">
+            <div class="faq-content">
+                <h3 class="question">1. What is PDLC and how does it work?</h3>
+                <p class="answer">PDLC stands for Polymer Dispersed Liquid Crystals. PDLC film contains liquid crystal droplets suspended in a polymer matrix. When powered, the crystals align to become transparent; when off, they scatter light for privacy. It’s like magic glass—switchable with a button, remote, or even a smartphone app.</p>
+            </div>
+            <img src="images/PDLC Diagram.png" alt="PDLC Diagram Power On Off">
+        </section>
+
+        <div class="faq-grid">
+            <div class="faq-card">
+                <h3 class="question">2. What’s the difference between PDLC and DDLC?</h3>
+                <p class="answer">PDLC is our standard white-on-clear film. DDLC is our advanced color version - it incorporates dye molecules, so you can choose colors like blue, grey, or even custom shades. It’s perfect for branding or matching interior designs while still offering excellent shading.</p>
+            </div>
+            <div class="faq-card">
+                <h3 class="question">3. Can your film be used outdoors?</h3>
+                <p class="answer">Yes, especially our DDLC and automotive-grade films. They are UV-resistant, weatherproof, and operate in extreme temperatures from -30°C to 90°C. They’re ideal for curtain walls, sunrooms, balconies, and car canopies.</p>
+            </div>
+            <div class="faq-card">
+                <h3 class="question">4. How durable is the film?</h3>
+                <p class="answer">Our films undergo rigorous testing to ensure no yellowing or peeling. They have a lifespan of over 80,000 hours, which is about 10+ years of continuous use.</p>
+            </div>
+            <div class="faq-card">
+                <h3 class="question">5. Is installation difficult?</h3>
+                <p class="answer">Not at all. We offer adhesive film for retrofitting with a peel-and-stick layer. No special tools needed. We also provide detailed guides and can recommend certified installers.</p>
+            </div>
+            <div class="faq-card">
+                <h3 class="question">6. Can I get custom patterns or logos?</h3>
+                <p class="answer">Absolutely. We specialize in custom designs - logos, geometric patterns, landscapes, even dynamic displays using laser etching. It’s a fantastic way to enhance brand visibility in commercial spaces.</p>
+            </div>
+            <div class="faq-card">
+                <h3 class="question">7. How do Smart Blinds compare to traditional blinds?</h3>
+                <p class="answer">Smart Blinds are silent, maintenance-free, and save space. They switch instantly with no moving parts to wear out. Plus, they can be integrated seamlessly with smart home systems for automated light control.</p>
+            </div>
+            <div class="faq-card">
+                <h3 class="question">8. Do PDLC films use a lot of power?</h3>
+                <p class="answer">Power consumption is minimal, about 5–10W per square meter. Our films run on low-voltage AC power (typically 36–48V). We supply compatible transformers, remotes, and switches.</p>
+            </div>
+            <div class="faq-card">
+                <h3 class="question">9. Can the film be used in vehicles?</h3>
+                <p class="answer">Yes, we have an automotive-grade film specifically for cars, EVs, and even high-speed trains. It’s heat-resistant, shatterproof, and provides instant privacy for sunroofs and windows while reducing interior heat.</p>
+            </div>
+            <div class="faq-card">
+                <h3 class="question">10. Is it safe for bathrooms and wet areas?</h3>
+                <p class="answer">Yes, our films are moisture-resistant and can be used in bathrooms, spas, and swimming pool enclosures. The adhesive and laminated versions both provide a sealed, waterproof barrier when properly installed.</p>
+            </div>
+        </div>
+
+        <section class="faq-split reverse">
+            <div class="faq-content">
+                <h3 class="question">11. Do you offer LED films?</h3>
+                <p class="answer">We can offer custom films with embedded LEDs. When powered, they sparkle like stars without affecting transparency. This adds a special effect perfect for decorative partitions or ceilings, adding ambiance without obstruction.</p>
+            </div>
+            <img src="images/starglass.png" alt="Star Glass LED Film">
+        </section>
+
+        <div class="faq-grid">
+            <div class="faq-card">
+                <h3 class="question">12. Can the film be cut to size on-site?</h3>
+                <p class="answer">We recommend pre-cutting in our factory for best results. However, our Smart Blinds and some films can be trimmed on-site with specific guidelines. We will provide a cutting diagram to avoid damaging electrodes.</p>
+            </div>
+            <div class="faq-card">
+                <h3 class="question">13. Do you offer samples?</h3>
+                <p class="answer">Yes, we provide small samples of our standard films. For custom designs, we can create a mock-up or digital preview. Sampling helps you evaluate clarity, haze, and color before committing.</p>
+            </div>
+            <div class="faq-card">
+                <h3 class="question">14. What’s the lead time for orders?</h3>
+                <p class="answer">Standard products ship in 7-10 days. Custom designs or large projects take 3-5 weeks depending on complexity. We always provide a timeline upfront and keep you updated throughout production.</p>
+            </div>
+        </div>
+
+        <section class="faq-split">
+            <div class="faq-content">
+                <h3 class="question">15. Are your products certified?</h3>
+                <p class="answer">Yes, we hold CE, ISO, and other industry certifications. Our films are engineered in ISO-certified clean rooms to ensure zero contamination or optical defects. We’re happy to share certificates and test reports for your compliance needs.</p>
+            </div>
+            <img src="images/workshop.jpg" alt="Clean Room Workshop Factory">
+        </section>
+
+        <div class="faq-grid">
+            <div class="faq-card">
+                <h3 class="question">16. How does your pricing compare?</h3>
+                <p class="answer">We balance competitive pricing with premium quality features like wider temperature ranges and longer lifespans, offering better long-term value. As one of the earliest PDLC manufacturers in China, we balance cost with advanced features.</p>
+            </div>
+            <div class="faq-card">
+                <h3 class="question">17. Smart Home Integration?</h3>
+                <p class="answer">Yes, our films can be controlled via WiFi, Zigbee, or RF remotes. We also offer API support for integration with systems like Control4, Savant, or even building your own custom control apps.</p>
+            </div>
+            <div class="faq-card">
+                <h3 class="question">18. What if the film gets damaged?</h3>
+                <p class="answer">If damaged, the affected panel can be easily replaced without redoing the entire installation thanks to our peel-and-stick backing. We provide troubleshooting support and can ship replacement rolls or panels if needed.</p>
+            </div>
+        </div>
+
+        <section class="faq-split reverse" style="grid-template-columns: 3fr 1fr;">
+            <div class="faq-content">
+                <h3 class="question">19. Do you provide support?</h3>
+                <p class="answer">Absolutely. We offer installation videos, manuals, and live video support. For large projects, we can arrange on-site training for your team or installers.</p>
+            </div>
+            <img src="images/easy_installation.jpg" alt="Installation Team">
+        </section>
+
+    </main>
+
+    <footer>
+        <p>&copy; 2026 NOVAGLASS SOLUTIONS | MAKING PRIVACY CLEAR</p>
+    </footer>
+
+</body>
+</html>
