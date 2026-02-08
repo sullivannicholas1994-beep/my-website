@@ -37,7 +37,7 @@
             background-color: #000; 
             z-index: 1;
             opacity: 1; 
-            transition: opacity 2s ease-in-out;
+            transition: opacity 0.25s ease-in-out;
         }
 
         /* Layer 3: Video Player */
@@ -50,7 +50,7 @@
             object-position: top center; 
             z-index: 2; 
             opacity: 1;
-            transition: opacity 0.5s ease-in-out; 
+            transition: opacity 0.25s ease-in-out; 
         }
 
         /* --- THE "SHIFT UP" CLASS --- */
@@ -182,12 +182,12 @@
 
                         videoPlayer.play();
                         videoPlayer.classList.remove('fade-out');
-                    }, 500); 
+                    }, 250); 
                 } else {
                     console.log("Playlist finished. Revealing static hero.");
                     setTimeout(() => {
                         curtain.classList.add('fade-out');
-                    }, 500);
+                    }, 250);
                 }
             });
         });
