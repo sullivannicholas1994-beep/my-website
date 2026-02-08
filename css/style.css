@@ -159,7 +159,7 @@ a.product-card:hover {
     transform: translateY(-5px);       /* Moves the card up slightly */
     border-color: var(--accent-blue);  /* Lights up the border */
     box-shadow: 0 10px 20px rgba(0,0,0,0.4); /* Adds a subtle shadow underneath */
-}}
+}
 
 a.product-card { padding: 0; }
 .product-img { width: 100%; height: 220px; object-fit: cover; }
@@ -310,4 +310,3 @@ footer { text-align: center; padding: 60px 0; border-top: 1px solid rgba(255,255
     .gallery-grid {
         grid-template-columns: 1fr;
     }
-}

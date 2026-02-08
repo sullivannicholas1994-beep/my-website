@@ -5,6 +5,108 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>NovaGlass Solutions | Making Privacy Clear</title>
     <link rel="stylesheet" href="css/style.css">
+    <style>
+        /* --- HERO & VIDEO STYLES --- */
+        .hero {
+            position: relative;
+            /* CROP HEIGHT: Sets the visible window size (100vh minus 100px) */
+            height: calc(100vh - 100px);
+            overflow: hidden; 
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+        }
+
+        /* Layer 1: Static Background (Fallback) */
+        .hero-bg {
+            position: absolute;
+            top: 0; left: 0; width: 100%; 
+            height: 100vh; 
+            background-image: url('office_partitions.jpeg'); 
+            background-size: cover;
+            background-position: top center;
+            z-index: 0;
+        }
+
+        /* Layer 2: Curtain (Fade to Black) */
+        .hero-curtain {
+            position: absolute;
+            top: 0; left: 0; width: 100%; 
+            height: 100vh; 
+            background-color: #000; 
+            z-index: 1;
+            opacity: 1; 
+            transition: opacity 2s ease-in-out;
+        }
+
+        /* Layer 3: Video Player */
+        .hero-video {
+            position: absolute;
+            top: 0; /* Default: Anchored to Top (Bottom gets cut off) */
+            left: 0; width: 100%; 
+            height: 100vh; 
+            object-fit: cover;
+            object-position: top center; 
+            z-index: 2; 
+            opacity: 1;
+            transition: opacity 0.5s ease-in-out; 
+        }
+
+        /* --- THE "SHIFT UP" CLASS --- */
+        /* Pulls the video UP by 100px. 
+           Result: Top gets cut off, Bottom becomes visible. */
+        .hero-video.shift-up {
+            top: -100px !important;
+        }
+
+        /* Layer 4: Overlay */
+        .hero-overlay {
+            position: absolute;
+            top: 0; left: 0; width: 100%; 
+            height: 100vh; 
+            background: rgba(0, 0, 0, 0.3);
+            z-index: 3;
+        }
+
+        /* Layer 5: Text Content */
+        .hero-content {
+            position: relative;
+            z-index: 4;
+            color: white;
+            padding: 20px;
+            margin-bottom: 20px; 
+        }
+
+        /* Responsive Text Classes */
+        .hero-title {
+            font-size: 3.5rem; 
+            letter-spacing: 5px; 
+            margin-bottom: 20px;
+            text-transform: uppercase;
+        }
+
+        .hero-text {
+            margin-bottom: 40px; 
+            font-size: 1.2rem; 
+            max-width: 600px; 
+            margin-left: auto; 
+            margin-right: auto;
+        }
+
+        @media (max-width: 768px) {
+            .hero-title {
+                font-size: 2.2rem; 
+                letter-spacing: 2px;
+            }
+            .hero-text {
+                font-size: 1rem;
+                padding: 0 10px;
+            }
+        }
+
+        .fade-out { opacity: 0 !important; }
+    </style>
 </head>
 <body>
 
@@ -21,69 +123,12 @@
             <li><a href="about.html">About</a></li>
             <li><a href="products.html">Products</a></li>
             <li><a href="contact.html">Contact</a></li>
-			<li><a href="faq.html">FAQ</a></li>
+            <li><a href="faq.html">FAQ</a></li>
         </ul>
     </nav>
 
-    <style>
-        .hero {
-            position: relative;
-            /* Layer 1 (Bottom): The Static Image */
-            background-image: url('office_partitions.jpeg'); 
-            background-size: cover;
-            background-position: center;
-            overflow: hidden;
-            height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-        }
-
-        /* Layer 2: The "Curtain" */
-        /* Hides the static image while videos are playing */
-        .hero-curtain {
-            position: absolute;
-            top: 0; left: 0; width: 100%; height: 100%;
-            background-color: #000; /* Fade to black between clips */
-            z-index: 1;
-            opacity: 1;
-            transition: opacity 2s ease-in-out;
-        }
-        
-        /* Layer 3: The Video Player */
-        .hero-video {
-            position: absolute;
-            top: 0; left: 0; width: 100%; height: 100%;
-            object-fit: cover;
-            z-index: 2; 
-            opacity: 1;
-            transition: opacity 1s ease-in-out; /* Faster fade for video swaps */
-        }
-
-        /* Layer 4: Text Contrast Overlay */
-        .hero-overlay {
-            position: absolute;
-            top: 0; left: 0; right: 0; bottom: 0;
-            background: rgba(0, 0, 0, 0.3);
-            z-index: 3;
-        }
-
-        /* Layer 5 (Top): Content */
-        .hero-content {
-            position: relative;
-            z-index: 4;
-            color: white;
-            padding: 20px;
-        }
-
-        /* Utility Class to Hide Elements */
-        .fade-out {
-            opacity: 0 !important;
-        }
-    </style>
-
     <header class="hero">
+        <div class="hero-bg"></div>
         <div id="hero-curtain" class="hero-curtain"></div>
 
         <video id="hero-player" class="hero-video" autoplay muted playsinline>
@@ -93,8 +138,8 @@
         <div class="hero-overlay"></div>
 
         <div class="hero-content">
-            <h1 style="font-size: 3.5rem; letter-spacing: 5px; margin-bottom: 20px;">NOVAGLASS</h1>
-            <p style="margin-bottom: 40px; font-size: 1.2rem; max-width: 600px; margin-left: auto; margin-right: auto;">
+            <h1 class="hero-title">NOVAGLASS</h1>
+            <p class="hero-text">
                 Next-generation switchable PDLC technology for instant privacy and temperature control.
             </p>
             <a href="products.html" class="btn-main">Explore Solutions</a>
@@ -106,40 +151,43 @@
             const videoPlayer = document.getElementById('hero-player');
             const curtain = document.getElementById('hero-curtain');
             
-            // Playlist
+            // Playlist updated with your real filenames
             const playlist = [
                 "videos/boardroom privacy.mp4",
-                "videos/hotel_bathroom.mp4",
                 "videos/kitchen_glass_frosted.mp4",
-                "videos/residential_demo.mp4",
-                "videos/shower_demo.mp4",
                 "videos/novaglass_pro_office.mp4",
-                "videos/wave_pattern.mp4"
+                
             ];
 
             let currentVideoIndex = 0;
 
             videoPlayer.addEventListener('ended', function() {
-                // 1. Fade out current video (reveals black curtain)
                 videoPlayer.classList.add('fade-out');
 
-                // 2. Check if there is a next video
                 if (currentVideoIndex < playlist.length - 1) {
                     currentVideoIndex++;
                     
-                    // Wait 1s for fade out, then swap source and fade in
+                    const nextVideo = playlist[currentVideoIndex];
+                    
                     setTimeout(() => {
-                        videoPlayer.src = playlist[currentVideoIndex];
+                        videoPlayer.src = nextVideo;
+                        
+                        // LOGIC: If it's the Wave Pattern, add 'shift-up' to show the bottom.
+                        // Otherwise, remove it (default is top aligned, cutting the bottom).
+                        if (nextVideo.includes('wave_pattern')) {
+                            videoPlayer.classList.add('shift-up');
+                        } else {
+                            videoPlayer.classList.remove('shift-up');
+                        }
+
                         videoPlayer.play();
                         videoPlayer.classList.remove('fade-out');
-                    }, 1000); // Matches CSS transition time
+                    }, 500); 
                 } else {
-                    // 3. End of playlist: 
-                    // Video is already faded out. Now fade out the curtain to reveal image.
                     console.log("Playlist finished. Revealing static hero.");
                     setTimeout(() => {
                         curtain.classList.add('fade-out');
-                    }, 1000);
+                    }, 500);
                 }
             });
         });
